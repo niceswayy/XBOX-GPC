@@ -1,0 +1,135 @@
+/* === GLOBAL === */
+body {
+    background: transparent;
+}
+
+/* === CONTROLLER BASE === */
+.controller.custom {
+    position: relative;
+    background: radial-gradient(circle at 50% 40%, #1a1a1a 0%, #0a0a0a 70%, #000 100%);
+    border-radius: 42px;
+    box-shadow:
+        inset 0 0 30px rgba(255,255,255,0.03),
+        0 10px 40px rgba(0,0,0,0.8);
+    padding: 20px;
+}
+
+/* subtle light reflection */
+.controller.custom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 42px;
+    background: linear-gradient(120deg, rgba(255,255,255,0.04), transparent 40%);
+    pointer-events: none;
+}
+
+/* === DEFAULT BUTTONS (BLACK) === */
+.button {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 2px 6px rgba(0,0,0,0.9),
+        0 0 4px rgba(255,255,255,0.05);
+    transition: all 0.08s ease;
+}
+
+/* pressed (subtle white glow) */
+.button.pressed {
+    background: linear-gradient(145deg, #eaeaea, #ffffff);
+    box-shadow:
+        0 0 12px rgba(255,255,255,0.6),
+        inset 0 0 6px rgba(255,255,255,0.8);
+    transform: scale(0.94);
+}
+
+/* === STICKS (WHITE) === */
+.stick {
+    background: radial-gradient(circle, #ffffff 0%, #dcdcdc 60%, #bfbfbf 100%);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 3px 6px rgba(0,0,0,0.4),
+        0 0 6px rgba(255,255,255,0.3);
+}
+
+/* stick pressed */
+.stick.pressed {
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.9),
+        inset 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* === D-PAD (WHITE) === */
+.dpad .button {
+    background: linear-gradient(145deg, #f5f5f5, #cfcfcf);
+    border-radius: 6px;
+}
+
+.dpad .button.pressed {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.9);
+}
+
+/* === TRIGGERS (LT / RT) === */
+.trigger {
+    background: linear-gradient(to bottom, #f0f0f0, #cfcfcf);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.trigger.pressed {
+    background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+    box-shadow: 0 0 12px rgba(255,255,255,0.8);
+}
+
+/* === BUMPERS (LB / RB) === */
+.bumper {
+    background: linear-gradient(145deg, #f5f5f5, #d6d6d6);
+    border-radius: 8px;
+}
+
+.bumper.pressed {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+/* === START / SELECT / HOME (BLACK) === */
+.start, .select, .button.home {
+    background: #111;
+    border-radius: 4px;
+}
+
+.start.pressed, 
+.select.pressed, 
+.button.home.pressed {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+/* === ABXY (RESTE EN NOIR) === */
+.button.a,
+.button.b,
+.button.x,
+.button.y {
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+}
+
+/* pressed → blanc */
+.button.a.pressed,
+.button.b.pressed,
+.button.x.pressed,
+.button.y.pressed {
+    background: #ffffff;
+}
+
+/* === GLOBAL AMBIENT GLOW === */
+.controller.custom::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 42px;
+    pointer-events: none;
+    box-shadow:
+        inset 0 0 60px rgba(255,255,255,0.04),
+        0 0 40px rgba(0,0,0,0.6);
+}
